@@ -198,7 +198,7 @@ class LeaderboardView(APIView):
         post_content_type = ContentType.objects.get_for_model(Post)
         comment_content_type = ContentType.objects.get_for_model(Comment)
         
-        # Step 1: Get all votes from last 24h with content author info
+        # Get all votes from last 24h and aggregate by content author
         # We need to aggregate by the AUTHOR of the content being voted on
         
         # For Post votes: get author from Post

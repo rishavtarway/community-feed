@@ -1,4 +1,4 @@
-# Playto Community Feed - Technical Explainer
+# Community Feed - Technical Explainer
 
 ## 1. The Tree (Solving N+1)
 
@@ -29,8 +29,7 @@ ORDER BY score DESC
 LIMIT 5;
 ```
 
-## 3. The AI Audit
+## 3. Concurrency Handling
 
-* **The Bug:** The AI initially tried to add a `karma` integer field to the User model and update it via Django Signals (`post_save`).
-* **Why it failed:** This violates the requirement for a "Last 24h" rolling window. A static integer field cannot expire karma from 25 hours ago automatically.
-* **The Fix:** I rejected the Signal approach and implemented the runtime aggregation query using Django's `annotate` and `Sum` with a `Q` filter on the timestamp.
+* **The Problem:** Multiple users clicking "Like" simultaneously could create duplicate votes.
+* **The Solution:** Database-level `UniqueConstraint` on `(user, content_type, object_id)` combined with `transaction.atomic()` and `IntegrityError` catching ensures idempotent vote toggling.
