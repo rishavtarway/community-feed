@@ -13,10 +13,14 @@ This project implements a social feed where users can post, comment (with nested
 
 ## Visuals
 
-**The Feed & Leaderboard**
-![Feed View](screenshots/feed-view.png)
+| The Feed | The Leaderboard |
+|:--------:|:---------------:|
+| ![Feed View](screenshots/feed-view.png) | ![Leaderboard](screenshots/leaderboard.png) |
+
+<br>
 
 **Deeply Nested Comments (Level 5+)**
+
 ![Nested Comments](screenshots/nested-comments.png)
 
 ## Tech Stack
