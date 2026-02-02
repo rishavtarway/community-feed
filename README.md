@@ -2,7 +2,7 @@
 
 A high-performance threaded discussion platform featuring infinite nesting and a time-windowed leaderboard.
 
-## 🚀 Live Demo
+##  Live Demo
 * **Frontend:** [https://community-feed-iota.vercel.app/](https://community-feed-iota.vercel.app/)
 * **Backend:** [https://feed-backend-vyk1.onrender.com](https://feed-backend-vyk1.onrender.com)
 
@@ -47,5 +47,5 @@ npm install
 npm run dev
 ```
 
-## Engineering Notes
+## Notes
 For a deep dive into the SQL logic used for the leaderboard and the tree serialization strategy, please read [EXPLAINER.md](EXPLAINER.md).
